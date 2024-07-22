@@ -10,7 +10,7 @@ use tokio::io::{AsyncRead, AsyncWrite, ReadBuf};
 use futures_lite::ready;
 
 #[derive(Debug, Clone)]
-pub struct RawPacketStream(Arc<AsyncFd<SyncRawPacketStream>>);
+pub struct RawPacketStream(pub Arc<AsyncFd<SyncRawPacketStream>>);
 
 impl RawPacketStream {
     pub fn new() -> Result<RawPacketStream> {
